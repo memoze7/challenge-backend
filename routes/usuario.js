@@ -16,7 +16,7 @@ app.get('/', (req, res, next) => {
 
     Usuario.find({}, 'nombre email img role')
         .skip(desde)
-        .limit(5)
+        .limit(10)
         .exec(
             (err, usuarios) => {
                 if (err) {
@@ -139,7 +139,7 @@ app.post('/', (req, res) => {
 app.delete('/:id', mdAuthentication.verificaToken, (req, res) => {
     const id = req.params.id;
 
-    usuario.findByIdAndRemove(id, (err, usuario) => {
+    Usuario.findByIdAndRemove(id, (err, usuario) => {
         if (err) {
             return res.status(500).json({
                 ok: false,

@@ -9,15 +9,15 @@ var propiedadSchema = new Schema({
     },
     titulo: {
         type: String,
-        required: [true, 'El titulo es necesaría']
+        required: [true, 'El titulo es necesario']
     },
     direccion: {
         type: String,
-        required: [true, 'La dirección es necesaría']
+        required: [true, 'La dirección es necesaria']
     },
     ciudad: {
         type: String,
-        required: [true, 'La ciudad es necesaría']
+        required: [true, 'La ciudad es necesaria']
     },
     pais: {
         type: String,

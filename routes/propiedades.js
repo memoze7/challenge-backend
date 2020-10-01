@@ -18,7 +18,7 @@ app.get('/', (req, res, next) => {
 
     Propiedad.find({})
         .skip(desde)
-        .limit(20)
+        .limit(10)
         .populate('usuario', 'nombre email')
         .exec(
             (err, propiedad) => {

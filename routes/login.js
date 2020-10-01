@@ -28,7 +28,7 @@ app.post('/', (req, res) => {
         if (!usuario) {
             return res.status(400).json({
                 ok: false,
-                mensaje: `Credenciales incorrectas - email`,
+                mensaje: `Credenciales incorrectas `,
                 errors: {
                     message: 'Credenciales incorrectas'
                 }
@@ -39,7 +39,7 @@ app.post('/', (req, res) => {
         if (!bcrypt.compareSync(body.password, usuario.password)) {
             return res.status(400).json({
                 ok: false,
-                mensaje: `Credenciales incorrectas - password`,
+                mensaje: `Credenciales incorrectas`,
                 errors: {
                     message: 'Credenciales incorrectas'
                 }
