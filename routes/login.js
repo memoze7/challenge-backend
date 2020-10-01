@@ -18,7 +18,7 @@ app.post('/', (req, res) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
-                mensaje: 'Error al buscar usuarios',
+                message: 'Error al buscar usuarios',
                 errors: err
             })
         }
@@ -28,7 +28,7 @@ app.post('/', (req, res) => {
         if (!usuario) {
             return res.status(400).json({
                 ok: false,
-                mensaje: `Credenciales incorrectas `,
+                message: `Credenciales incorrectas `,
                 errors: {
                     message: 'Credenciales incorrectas'
                 }
@@ -39,7 +39,7 @@ app.post('/', (req, res) => {
         if (!bcrypt.compareSync(body.password, usuario.password)) {
             return res.status(400).json({
                 ok: false,
-                mensaje: `Credenciales incorrectas`,
+                message: `Credenciales incorrectas`,
                 errors: {
                     message: 'Credenciales incorrectas'
                 }

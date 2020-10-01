@@ -21,7 +21,7 @@ app.put('/:modelo/:id', (req, res, next) => {
     if (modelos.indexOf(modelo) < 0) {
         return res.status(400).json({
             ok: false,
-            mensaje: 'modelo no valido',
+            message: 'modelo no valido',
             errors: {
                 message: `los modelos validos son ${modelos.join(', ')}`
             }
@@ -32,7 +32,7 @@ app.put('/:modelo/:id', (req, res, next) => {
     if (!req.files) {
         return res.status(400).json({
             ok: false,
-            mensaje: 'No seleccionó ningún archivo',
+            message: 'No seleccionó ningún archivo',
             errors: {
                 message: 'Debe seleccionar un archivo'
             }
@@ -50,7 +50,7 @@ app.put('/:modelo/:id', (req, res, next) => {
     if (extensionesValidas.indexOf(extension) < 0) {
         return res.status(400).json({
             ok: false,
-            mensaje: 'Extensiones no valida',
+            message: 'Extensiones no valida',
             errors: {
                 message: `Las extensiones validas son ${extensionesValidas.join(', ')}`
             }
@@ -66,7 +66,7 @@ app.put('/:modelo/:id', (req, res, next) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
-                mensaje: 'Error al mover archivo',
+                message: 'Error al mover archivo',
                 errors: err
             })
         }
@@ -76,7 +76,7 @@ app.put('/:modelo/:id', (req, res, next) => {
 
     // res.status(200).json({
     //     ok: true,
-    //     mensaje: 'Petición realizada correctamente - uploads',
+    //     message: 'Petición realizada correctamente - uploads',
 
     // })
 });
@@ -88,7 +88,7 @@ function subirPorModelo(modelo, id, nombreArchivo, res) {
                 if (err) {
                     return res.status(500).json({
                         ok: false,
-                        mensaje: 'Error al buscar usuarios',
+                        message: 'Error al buscar usuarios',
                         errors: err
                     })
                 }
@@ -96,7 +96,7 @@ function subirPorModelo(modelo, id, nombreArchivo, res) {
                 if (!usuario) {
                     return res.status(400).json({
                         ok: false,
-                        mensaje: `El usuario con el id: ${id} no existe`,
+                        message: `El usuario con el id: ${id} no existe`,
                         errors: {
                             message: 'No existe un usuario con ese ID'
                         }
@@ -119,7 +119,7 @@ function subirPorModelo(modelo, id, nombreArchivo, res) {
                     if (err) {
                         return res.status(400).json({
                             ok: false,
-                            mensaje: 'Error al actualizar usuario',
+                            message: 'Error al actualizar usuario',
                             errors: err
                         })
                     }
@@ -137,7 +137,7 @@ function subirPorModelo(modelo, id, nombreArchivo, res) {
                 if (err) {
                     return res.status(500).json({
                         ok: false,
-                        mensaje: 'Error al buscar propiedad',
+                        message: 'Error al buscar propiedad',
                         errors: err
                     })
                 }
@@ -145,7 +145,7 @@ function subirPorModelo(modelo, id, nombreArchivo, res) {
                 if (!propiedad) {
                     return res.status(400).json({
                         ok: false,
-                        mensaje: `La propiedad con el id: ${id} no existe`,
+                        message: `La propiedad con el id: ${id} no existe`,
                         errors: {
                             message: 'No existe la Propiedad con ese ID'
                         }
@@ -171,7 +171,7 @@ function subirPorModelo(modelo, id, nombreArchivo, res) {
                     if (err) {
                         return res.status(400).json({
                             ok: false,
-                            mensaje: 'Error al actualizar Propiedad',
+                            message: 'Error al actualizar Propiedad',
                             errors: err
                         })
                     }

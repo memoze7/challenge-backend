@@ -25,7 +25,7 @@ app.get('/', (req, res, next) => {
                 if (err) {
                     return res.status(500).json({
                         ok: false,
-                        mensaje: 'Error cargando las propiedades',
+                        message: 'Error cargando las propiedades',
                         errors: err
                     })
                 }
@@ -33,7 +33,7 @@ app.get('/', (req, res, next) => {
                     if (err) {
                         return res.status(500).json({
                             ok: false,
-                            mensaje: 'Error cargando las propiedades',
+                            message: 'Error cargando las propiedades',
                             errors: err
                         })
                     }
@@ -57,7 +57,7 @@ app.put('/:id', mdAuthentication.verificaToken, (req, res) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
-                mensaje: 'Error al buscar propiedad',
+                message: 'Error al buscar propiedad',
                 errors: err
             })
         }
@@ -65,7 +65,7 @@ app.put('/:id', mdAuthentication.verificaToken, (req, res) => {
         if (!propiedad) {
             return res.status(400).json({
                 ok: false,
-                mensaje: `La propiedad con el id: ${id} no existe`,
+                message: `La propiedad con el id: ${id} no existe`,
                 errors: {
                     message: 'No existe la Propiedad con ese ID'
                 }
@@ -88,7 +88,7 @@ app.put('/:id', mdAuthentication.verificaToken, (req, res) => {
             if (err) {
                 return res.status(400).json({
                     ok: false,
-                    mensaje: 'Error al actualizar Propiedad',
+                    message: 'Error al actualizar Propiedad',
                     errors: err
                 })
             }
@@ -130,7 +130,7 @@ app.post('/', mdAuthentication.verificaToken, (req, res) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
-                mensaje: 'Error al crear propiedad',
+                message: 'Error al crear propiedad',
                 errors: err
             })
         }
@@ -156,7 +156,7 @@ app.delete('/:id', mdAuthentication.verificaToken, (req, res) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
-                mensaje: 'Error al borrar propiedad',
+                message: 'Error al borrar propiedad',
                 errors: err
             })
         }
@@ -164,7 +164,7 @@ app.delete('/:id', mdAuthentication.verificaToken, (req, res) => {
         if (!propiedad) {
             return res.status(400).json({
                 ok: false,
-                mensaje: `La propiedad con el id: ${id} no existe`,
+                message: `La propiedad con el id: ${id} no existe`,
                 errors: {
                     message: 'No existe una propiedad con ese ID'
                 }

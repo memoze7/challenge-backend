@@ -30,7 +30,7 @@ app.get('/coleccion/:tabla/:busqueda', (req, res) => {
         default:
             return res.status(400).json({
                 ok: false,
-                mensaje: 'Los tipos de busqueda sólo son: usuarios, y propiedades2',
+                message: 'Los tipos de busqueda sólo son: usuarios, y propiedades2',
                 error: {
                     message: 'Tipo de tabla/coleccion no válido'
                 }
